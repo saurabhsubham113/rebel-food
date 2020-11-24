@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import BrandLayout from './Components/BrandLaout';
+import ApiHandle from "./Axios/ApiHandle";
+import Pagination from "./Components/Pagination";
 import './App.css';
 
-function App() {
+const App = () => {
+  const [Brands, setBrands] = useState([]);
+  const [BrandImage, setBrandImage] = useState([])
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(20);
+
+  useEffect(() => {
+    const fetchBrands = async () => {
+      setLoading(true);
+      const res = await ApiHandle.getBeerBrand()
+      const brImg = await ApiHandle.getBrandImage()
+      setBrands(res)
+      setBrandImage(brImg)
+      setLoading(false);
+    };
+
+    fetchBrands();
+  }, []);
+
+  //Get current posts
+  const indexOfLastPage = currentPage * postsPerPage;
+  const indexOfFirstPage = indexOfLastPage - postsPerPage;
+  const currentBrands = Brands.slice(indexOfFirstPage, indexOfLastPage)
+  const howManyPages = Math.ceil(Brands.length / postsPerPage)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container mt-2'>
+      <h1 className='text-primary text-center'>Beer Brands</h1>
+      <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
+      < BrandLayout loading={loading} brands={currentBrands} image={BrandImage} />
+
     </div>
   );
-}
+};
 
 export default App;
+
