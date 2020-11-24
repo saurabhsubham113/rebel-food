@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/rebel-food/static/css/main.61fe67d3.chunk.css",
+    "main.js": "/rebel-food/static/js/main.cdb18ce0.chunk.js",
+    "main.js.map": "/rebel-food/static/js/main.cdb18ce0.chunk.js.map",
+    "runtime-main.js": "/rebel-food/static/js/runtime-main.1646d0b2.js",
+    "runtime-main.js.map": "/rebel-food/static/js/runtime-main.1646d0b2.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/rebel-food/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.4d719b64.chunk.js": "/rebel-food/static/js/2.4d719b64.chunk.js",
+    "static/js/2.4d719b64.chunk.js.map": "/rebel-food/static/js/2.4d719b64.chunk.js.map",
+    "index.html": "/rebel-food/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/rebel-food/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.61fe67d3.chunk.css.map": "/rebel-food/static/css/main.61fe67d3.chunk.css.map",
+    "static/js/2.4d719b64.chunk.js.LICENSE.txt": "/rebel-food/static/js/2.4d719b64.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1646d0b2.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.4d719b64.chunk.js",
+    "static/css/main.61fe67d3.chunk.css",
+    "static/js/main.cdb18ce0.chunk.js"
+  ]
+}
